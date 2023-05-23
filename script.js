@@ -18,6 +18,22 @@ var wavery = new Wavery({
 
 var svg = wavery.generateSvg();
 var element = document.getElementById("svg");
+var gradient = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient");
+gradient.setAttribute("id", "line-gradient");
+gradient.setAttribute("x1", "0%");
+gradient.setAttribute("y1", "0%");
+gradient.setAttribute("x2", "100%");
+gradient.setAttribute("y2", "0%");
+var stop1 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
+stop1.setAttribute("offset", "0%");
+stop1.setAttribute("style", "stop-color:#5360ef;stop-opacity:1");
+var stop2 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
+stop2.setAttribute("offset", "100%");
+stop2.setAttribute("style", "stop-color:#680eb7;stop-opacity:1");
+gradient.appendChild(stop1);
+gradient.appendChild(stop2);
+svg.appendChild(gradient);
+
 element.appendChild(svg);
 element.getElementsByTagName("path")[0].setAttribute("fill", "url(#line-gradient)");
 

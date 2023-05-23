@@ -1,0 +1,164 @@
+* {
+    font-family: Roboto Mono, monospace;
+}
+
+header {
+    background: linear-gradient(90deg, #5360ef, #680eb7);
+    color: white;
+    text-align: center;
+}
+
+header .profile-picture {
+    max-width: 200px;
+    aspect-ratio: 1;
+    border-radius: 100px;
+    object-fit: cover;
+    transition: all .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+header .profile-picture:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    justify-content: center;
+}
+
+.content-wrapper {
+    max-width: 1080px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.content-wrapper section h2 {
+    width: fit-content;
+    background-image: linear-gradient(to right, #5360ef, #680eb7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.content-wrapper section h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: .1em;
+    margin: 5px 0;
+    background-image: linear-gradient(to right, #5360ef, #680eb7);
+}
+
+.content-wrapper section div.container {
+    width: fit-content;
+}
+
+.content-wrapper section div.container div:not(:last-of-type)::after {
+    content: "";
+    display: block;
+    width: 25%;
+    height: .1em;
+    margin: 5px 0;
+    background-image: linear-gradient(to right, #5360ef, #680eb7);
+}
+
+section:not(#professionnal-goal) {
+    display: none;
+}
+
+section:target~#professionnal-goal {
+    display: none !important;
+}
+
+section:target {
+    display: block !important;
+}
+
+html,
+body,
+.content-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+body {
+    flex: 1;
+    margin: 0;
+}
+
+footer {
+    padding: 1em;
+    text-align: center;
+    overflow: hidden;
+    height: 200px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+nav li {
+    transition: all .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+footer *:not(svg),
+nav li a {
+    transition: all .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    color: white;
+    width: fit-content;
+    text-decoration: none;
+    margin: 10px auto;
+}
+
+footer *:not(svg)::after,
+nav li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    transition: all .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+footer *:not(svg):hover::after,
+nav li a:hover::after {
+    width: 100%;
+}
+
+footer *:not(svg):hover,
+nav li:hover {
+    /* transform: scale(1.05); */
+    letter-spacing: .75px;
+}
+
+footer #svg {
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    /* height: 20vh; */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+footer #svg svg {
+    vertical-align: text-bottom;
+    margin-bottom: -1px;
+    width: 100%;
+}
+
+svg.font-awesome {
+    height: 18px;
+    vertical-align: bottom;
+    fill: white;
+}
+
+.fa-brands {
+    font-family: "Font Awesome 6 Brands";
+    font-style: normal;
+}

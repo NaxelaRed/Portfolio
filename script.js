@@ -22,7 +22,7 @@ element.appendChild(svg);
 element.getElementsByTagName("path")[0].setAttribute("fill", "url(#line-gradient)");
 
 window.addEventListener('resize', function () {
-    element.getElementsByTagName("svg")[0].getElementsByTagName("path")[0].style.transform = 'scaleX(' + (window.innerWidth / loadWidth) + ')';
+    element.getElementsByTagName("svg")[0].getElementsByTagName("path")[0].style.transform = 'scaleX(' + (window.innerWidth / (loadWidth - 1)) + ')';
 });
 
 function clickMe(image) {

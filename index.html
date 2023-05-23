@@ -4,170 +4,22 @@
 <head>
     <title>Portfolio Alexandre PERREUX</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="https://rawcdn.githack.com/up2pixy/wavery/master/dist/wavery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css">
+    <link rel="icon" href="https://media.discordapp.net/attachments/1046817333001322517/1110616176993775656/majik-15.png" type="image/x-icon">
+    <script src="script.js" type="text/javascript" defer></script>
+    <script src="https://rawcdn.githack.com/up2pixy/wavery/master/dist/wavery.min.js"></script>
 </head>
-
-<style>
-    * {
-        font-family: Roboto Mono, monospace;
-    }
-
-    header {
-        background: linear-gradient(90deg, #5360ef, #680eb7);
-    }
-
-    header h1 {
-        text-align: center;
-        color: white;
-    }
-
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        display: flex;
-        gap: 20px;
-        padding: 10px 0;
-        justify-content: center;
-    }
-
-    header nav, .content-wrapper {
-        max-width: 1080px;
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .content-wrapper section h2 {
-        width: fit-content;
-        background-image: linear-gradient(to right, #5360ef, #680eb7);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-    }
-
-    .content-wrapper section h2::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: .1em;
-        margin: 5px 0;
-        background-image: linear-gradient(to right, #5360ef, #680eb7);
-    }
-
-    .content-wrapper section div.container {
-        width: fit-content;
-    }
-
-    .content-wrapper section div.container div:not(:last-of-type)::after {
-        content: "";
-        display: block;
-        width: 25%;
-        height: .1em;
-        margin: 5px 0;
-        background-image: linear-gradient(to right, #5360ef, #680eb7);
-    }
-
-    section:not(#professionnal-goal) {
-        display: none;
-    }
-
-    section:target ~ #professionnal-goal {
-        display: none!important;
-    }
-
-    section:target {
-        display: block!important;
-    }
-
-    html, body, .content-wrapper {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-    }
-
-    body {
-        flex: 1;
-        margin: 0;
-    }
-
-    footer {
-        padding: 1em;
-        text-align: center;
-        overflow: hidden;
-        height: 200px;
-        display: flex;
-        flex-direction: column-reverse;
-    }
-
-    nav li {
-        transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
-    }
-
-    footer *:not(svg), nav li a {
-        transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
-        color: white;
-        width: fit-content;
-        text-decoration: none;
-        margin: 10px auto;
-    }
-
-    footer *:not(svg)::after, nav li a::after {
-        content: "";
-        display: block;
-        width: 0;
-        height: 1px;
-        background-color: white;
-        transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
-    }
-
-    footer *:not(svg):hover::after, nav li a:hover::after {
-        width: 100%;
-    }
-
-    footer *:not(svg):hover, nav li:hover {
-        /* transform: scale(1.05); */
-        letter-spacing: .75px;
-    }
-
-    footer #svg {
-        margin: 0;
-        width: 100%;
-        overflow: hidden;
-        /* height: 20vh; */
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
-    }
-
-    footer #svg svg {
-        vertical-align: text-bottom;
-        margin-bottom: -1px;
-        width: 100%;
-    }
-
-    svg.font-awesome {
-        height: 18px;
-        vertical-align: bottom;
-        fill: white;
-    }
-
-    .fa-brands {
-        font-family: "Font Awesome 6 Brands";
-        font-style: normal;
-    }
-</style>
 
 <body>
     <header>
         <h1>Alexandre PERREUX</h1>
+        <img class="profile-picture" src="https://media.discordapp.net/attachments/1046817333001322517/1110616176993775656/majik-15.png" alt="profile-picture" title="Click me" onclick="clickMe(this)">
         <nav>
             <ul>
                 <li><a href="#professionnal-goal">Professionnal goal</a></li>
                 <li><a href="#school-career">School career</a></li>
                 <li><a href="#professional-experience">Professional experience</a></li>
-                <li><a href="#personal-projects">Personnal projects</a></li>
+                <li><a href="#personnal-projects">Personnal projects</a></li>
                 <li><a href="#skills">Skills</a></li>
             </ul>
         </nav>
@@ -221,7 +73,7 @@
                     <p>As we were organising tournaments, to automate repetitive tasks I developed a bot in JavaScript <i class="fa-brands fa-js"></i> that did many tasks for us with a simple command.</p>
                 </div>
                 <div>
-                    <h3>Creating Minecraft mods
+                    <h3>Crating Minecraft mods
                         <img height="22" width="23" style="vertical-align: bottom;" src="https://cdn.worldvectorlogo.com/logos/minecraft-1.svg"></img>
                     </h3>
                     <p>I created mini-games in the game, football, capture the flag, skywars, shooter, etc...</p>
@@ -306,34 +158,4 @@
             alexandre.perreux@viacesi.fr</a></p>
     </footer>
 </body>
-
-<script>
-    const loadWidth = window.innerWidth;
-    var wavery = new Wavery({
-        width: loadWidth,
-        height: 300,
-        segmentCount: loadWidth / 200,
-        layerCount: 2,
-        variance: 0.8,
-        gradientColors: [
-            {
-                colorValue: "#680eb7",
-                position: 0
-            },
-            {
-                colorValue: "#5360ef",
-                position: 1
-            }
-        ]
-    });
-
-    var svg = wavery.generateSvg();
-    var element = document.getElementById("svg");
-    element.appendChild(svg);
-    element.getElementsByTagName("path")[0].setAttribute("fill", "url(#line-gradient)");
-
-    window.addEventListener('resize', function() {
-        element.getElementsByTagName("svg")[0].getElementsByTagName("path")[0].style.transform = 'scaleX(' + (window.innerWidth / loadWidth) + ')';
-    });
-</script>
 </html>
